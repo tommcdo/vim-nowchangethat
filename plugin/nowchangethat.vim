@@ -6,6 +6,6 @@ function! s:change_now(type)
 	endif
 endfunction
 
-nnoremap <Plug>(change-now) :<C-U>set operatorfunc=<SID>change_now<CR>g@
+nnoremap <silent> <Plug>(change-now) :<C-U>set operatorfunc=<SID>change_now<CR>g@
 
 nmap c. <Plug>(change-now)
