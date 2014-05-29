@@ -8,4 +8,4 @@ endfunction
 
 nnoremap <Plug>(change-now) :<C-U>set operatorfunc=<SID>change_now<CR>g@
 
-nmap cn <Plug>(change-now)
+nmap c. <Plug>(change-now)
