@@ -6,6 +6,17 @@ function! s:change_now(type)
 	endif
 endfunction
 
-nnoremap <silent> <Plug>(change-now) :<C-U>set operatorfunc=<SID>change_now<CR>g@
+function! s:create_map(mode, lhs, rhs)
+	if !hasmapto(a:rhs, a:mode)
+		execute a:mode.'map '.a:lhs.' '.a:rhs
+	endif
+endfunction
 
-nmap c. <Plug>(change-now)
+nnoremap <silent> <Plug>(change-now) :<C-U>set operatorfunc=<SID>change_now<CR>g@
+nnoremap <silent> <Plug>(change-now-line) :<C-U>set operatorfunc=<SID>change_now<CR>g@_
+
+if exists('g:nowchangethat_no_mappings')
+	finish
+endif
+
+call s:create_map('n', 'c.', '<Plug>(change-now)')
