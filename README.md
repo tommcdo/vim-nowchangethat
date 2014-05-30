@@ -5,7 +5,7 @@ nowchangethat.vim allows you to repeat the change command but on a different
 motion. After using the change command (with the `c` operator), or in fact any
 other insertion command, you can change a different motion to the same text.
 
-MAPPINGS
+Mappings
 --------
 
 `c.` - Repeat the previous change command over the new motion defined by
@@ -13,14 +13,14 @@ MAPPINGS
 
 `c..` - Like `c.`, but use the current line.
 
-EXAMPLES
+Examples
 --------
 
 After changing a word to "foo" using `ciw`, change the contents of a quoted
 string to "foo" using `c.i"`. You won't have to type "foo" the second time,
 and you will remain in Normal-mode.
 
-SETTINGS
+Settings
 --------
 
 To change the default mappings, simply provide your own mappings to the
