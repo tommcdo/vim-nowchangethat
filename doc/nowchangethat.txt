@@ -1,0 +1,51 @@
+*nowchangethat.vim*  Repeat a change command on a different motion
+
+Author: Tom McDonald <http://tommcdo.com>
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                    *nowchangethat*
+
+nowchangethat.vim allows you to repeat the change command but on a different
+motion. After using the change command (with the |c| operator), or in fact any
+other insertion command, you can change a different motion to the same text.
+
+MAPPINGS                                        *nowchangethat-mappings*
+
+                                                *c.*
+c.{motion}              Repeat the previous change command over {motion}.
+                                                *c..*
+c..                     Like |c.|, but for the current line. |linewise|
+
+EXAMPLES                                        *nowchangethat-examples*
+
+After changing a word to "foo" using `ciw`, change the contents of a quoted
+string to "foo" using `c.i"`. You won't have to type "foo" the second time,
+and you will remain in |Normal-mode|.
+
+SETTINGS                                        *nowchangethat-settings*
+
+To change the default mappings, simply provide your own mappings to the
+commands below. The default mappings are as follows:
+
+    nmap c.  <Plug>(change-now)
+    nmap c.. <Plug>(change-now-line)
+
+For example, to change the Normal-mode mapping to `cm`, use the following:
+
+    nmap cm <Plug>(change-now)
+
+This will use the mapping `cm`, and the default `c.` will not be mapped.
+
+                                                *g:nowchangethat_no_mappings*
+g:nowchangethat_no_mappings ~
+
+If this variable is defined, the default mappings will not be created.
+
+ISSUES AND TODO                                 *nowchangethat-issues*
+                                                *nowchangethat-todo*
+
+See https://github.com/tommcdo/vim-nowchangethat/issues for bugs and issues.
+
+ vim:tw=78:ts=8:ft=help:norl:
