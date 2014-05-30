@@ -14,9 +14,10 @@ other insertion command, you can change a different motion to the same text.
 MAPPINGS                                        *nowchangethat-mappings*
 
                                                 *c.*
-c.{motion}              Repeat the previous change command over {motion}.
+c.{motion}              Repeat the previous change command over the new motion
+                        defined by {motion}.
                                                 *c..*
-c..                     Like |c.|, but for the current line. |linewise|
+c..                     Like |c.|, but use the current line. |linewise|
 
 EXAMPLES                                        *nowchangethat-examples*
 
