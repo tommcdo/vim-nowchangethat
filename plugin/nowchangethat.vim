@@ -20,3 +20,4 @@ if exists('g:nowchangethat_no_mappings')
 endif
 
 call s:create_map('n', 'c.', '<Plug>(change-now)')
+call s:create_map('n', 'c..', '<Plug>(change-now-line)')
